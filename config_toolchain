@@ -1,0 +1,8 @@
+# !/bin/bash
+# configure toolchain for the desktop
+qitoolchain create for-the-desktop naoqi/toolchain.xml
+qibuild add-config for-the-desktop -t for-the-desktop
+
+# configure toolchain for the robot
+qitoolchain create for-the-robot cross-toolchain/toolchain.xml
+qibuild add-config for-the-robot -t for-the-robot
