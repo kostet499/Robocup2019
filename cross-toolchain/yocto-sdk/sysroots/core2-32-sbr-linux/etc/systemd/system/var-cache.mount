@@ -1,0 +1,13 @@
+[Unit]
+Description=mount /data/var/cache on /var/cache (bind)
+DefaultDependencies=false
+Before=local-fs.target
+After=data.target
+Requires=data.target
+Conflicts=umount.target
+
+[Mount]
+What=/data/var/cache
+Where=/var/cache
+Type=none
+Options=bind

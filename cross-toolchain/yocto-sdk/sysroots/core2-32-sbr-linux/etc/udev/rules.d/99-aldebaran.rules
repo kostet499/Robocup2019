@@ -1,0 +1,28 @@
+# Aldebaran Robotics devices
+
+# Body:
+SUBSYSTEM=="usb", ATTRS{idVendor}=="ffff", MODE="0660", GROUP="hal"
+
+# Head Intel x86 CPU based
+KERNEL=="cgos", GROUP="nao", MODE="0660"
+
+# Head NAO/Romeo/Pepper < 1.8
+# - i2c bus
+KERNEL=="i2c-*", ATTR{name}=="I2C SMBUS unicorn driver 2", TAG+="systemd", SYMLINK+="i2c-head", MODE="0660", GROUP="hal"
+
+# Head Pepper >= 1.8
+# - i2c bus
+KERNEL=="i2c-*", ATTR{name}=="I2C primary cgos", TAG+="systemd", SYMLINK+="i2c-head", MODE="0660", GROUP="hal"
+
+# Tablet Pepper 1.8, switch the usb mode to audio + adb + network
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="0e8d", RUN+="/usr/libexec/tablet-mode-switch"
+
+# Tell to PulseAudio to ignore internal PCI audio cards
+# That way the module-udev-detect ignore the pci card and
+# allow module-robot-detect to handle it correctly
+KERNEL=="card*", SUBSYSTEMS=="pci", DEVPATH=="*/0000:00:??.?/sound/*", ENV{PULSE_IGNORE}="1"
+# PulseAudio to ignore ASUS Xtion. The Linux driver sometimes fails when
+# activating this audio card which makes Pulseaudio to start very slowly.
+# Unfortunatly, OpenNI needs this device so it can not be disabled at the
+# driver level. See #34047.
+ATTRS{idVendor}=="1d27", ATTRS{idProduct}=="0601", ENV{PULSE_IGNORE}:="1"

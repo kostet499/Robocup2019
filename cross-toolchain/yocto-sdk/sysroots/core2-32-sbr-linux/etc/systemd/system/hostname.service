@@ -1,0 +1,7 @@
+[Unit]
+Description=Hostname
+After=local-fs.target
+Before=network.target
+[Service]
+Type=oneshot
+ExecStart=/bin/hostname -F /etc/hostname

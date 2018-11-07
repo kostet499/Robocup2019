@@ -1,0 +1,8 @@
+<package name="libnaoqi" version="0.1">
+  <depends buildtime="true" names="libalmath libqi qi-framework qiprobes gtest opencv3 libalmathinternal tinyxml pthread" />
+  <depends names="libalmath libqi qi-framework gtest libalmathinternal tinyxml pthread" runtime="true" />
+  <depends names="gtest" testtime="true" />
+  <scm>
+    <git revision="f5faef4ffa26d222e7763fc400b2976a1b2cfcf3" />
+    </scm>
+  </package>

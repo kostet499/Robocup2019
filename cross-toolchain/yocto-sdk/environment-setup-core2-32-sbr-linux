@@ -1,12 +1,12 @@
-export SDKTARGETSYSROOT=/opt/naoqi-os/sysroots/core2-32-sbr-linux
-export PATH=/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/sbin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/sbin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/../x86_64-naoqisdk-linux/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-uclibc:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-musl:$PATH
-export CCACHE_PATH=/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/../x86_64-naoqisdk-linux/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-uclibc:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-musl:$CCACHE_PATH
+export SDKTARGETSYSROOT=/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/core2-32-sbr-linux
+export PATH=/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/sbin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/bin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/sbin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/../x86_64-naoqisdk-linux/bin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-uclibc:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-musl:$PATH
+export CCACHE_PATH=/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/../x86_64-naoqisdk-linux/bin:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-uclibc:/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-musl:$CCACHE_PATH
 export PKG_CONFIG_SYSROOT_DIR=$SDKTARGETSYSROOT
 export PKG_CONFIG_PATH=$SDKTARGETSYSROOT/usr/lib/pkgconfig
-export CONFIG_SITE=/opt/naoqi-os/site-config-core2-32-sbr-linux
-export OECORE_NATIVE_SYSROOT="/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux"
+export CONFIG_SITE=/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/site-config-core2-32-sbr-linux
+export OECORE_NATIVE_SYSROOT="/home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux"
 export OECORE_TARGET_SYSROOT="$SDKTARGETSYSROOT"
-export OECORE_ACLOCAL_OPTS="-I /opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/share/aclocal"
+export OECORE_ACLOCAL_OPTS="-I /home/vlad/studies/Robocup2019/ctc-linux64-atom-2.8.2.15/yocto-sdk/sysroots/x86_64-naoqisdk-linux/usr/share/aclocal"
 unset command_not_found_handle
 export CC="i686-sbr-linux-gcc  -m32 -march=core2 -mtune=core2 -msse3 -mfpmath=sse --sysroot=$SDKTARGETSYSROOT"
 export CXX="i686-sbr-linux-g++  -m32 -march=core2 -mtune=core2 -msse3 -mfpmath=sse --sysroot=$SDKTARGETSYSROOT"

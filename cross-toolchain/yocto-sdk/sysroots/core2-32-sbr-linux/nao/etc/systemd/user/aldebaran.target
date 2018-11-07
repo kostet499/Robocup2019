@@ -1,0 +1,8 @@
+[Unit]
+Description=Aldebaran software target
+Wants=multi-user.target
+Requires=dbus.socket
+After=multi-user.target
+Conflicts=shutdown.target umount.target
+[Install]
+Alias=default.target

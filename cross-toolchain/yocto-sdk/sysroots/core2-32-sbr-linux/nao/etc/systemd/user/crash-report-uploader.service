@@ -1,0 +1,9 @@
+[Unit]
+Description=Uploader for NAOqi minidump
+After=network.target network-online.target local-fs.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/libexec/aldebaran/clean-dump-dir.sh
+ExecStart=/opt/aldebaran/bin/crash-report-upload

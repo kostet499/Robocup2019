@@ -1,0 +1,12 @@
+[Unit]
+Description=Erase-data
+DefaultDependencies=no
+Requires=shutdown.target umount.target final.target
+After=shutdown.target umount.target final.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/aldebaran/checksd.sh --erase
+ExecStartPost=/bin/systemctl isolate multi-user.target
+StandardOutput=tty
+StandardError=tty

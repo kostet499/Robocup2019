@@ -1,0 +1,2 @@
+# setup network configuration with the Pepper tablet
+KERNEL=="usb0", RUN+="/sbin/ip link set dev usb0 up", RUN+="/sbin/ip a add 198.18.0.1/15 dev usb0"

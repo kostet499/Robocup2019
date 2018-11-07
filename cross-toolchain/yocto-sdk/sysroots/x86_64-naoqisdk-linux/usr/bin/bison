@@ -1,0 +1,6 @@
+#!/bin/bash
+realpath=`readlink -fn $0`
+export BASEDIR=$(dirname $realpath)
+export BISON_PKGDATADIR="$BASEDIR/../share/bison"
+export PATH="$PATH:$BASEDIR"
+exec -a `dirname $realpath`/bison `dirname $realpath`/bison.real "$@"

@@ -1,0 +1,13 @@
+[Unit]
+Description=mount /data/var/lib on /var/lib (overlay)
+DefaultDependencies=false
+Before=local-fs.target
+After=data.target
+Requires=data.target
+Conflicts=umount.target
+
+[Mount]
+What=overlay
+Where=/var/lib
+Type=overlay
+Options=lowerdir=/var/lib,upperdir=/data/var/lib,workdir=/data/.work-var-lib

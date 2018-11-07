@@ -1,0 +1,10 @@
+# A kworker thread uses 100% of a CPU core on e3845 due to ACPI error.
+# This service disables the associated event. https://redmine.aldebaran.lan/issues/32785
+
+[Unit]
+Description=Disable acpi gpe12
+After=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'if grep -q E3845 /proc/cpuinfo; then echo disable > /sys/firmware/acpi/interrupts/gpe12; fi'

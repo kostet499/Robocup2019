@@ -1,0 +1,13 @@
+[Unit]
+Description=Trusted Computing Services Daemon
+ConditionPathExists=/dev/tpm0
+
+[Service]
+Type=forking
+# Create the directory for the TSS's persistent storage. See /etc/tcsd.conf
+ExecStartPre=/bin/mkdir -m 0700 -p /media/internal/tpm
+ExecStartPre=/bin/chown tss:tss /media/internal/tpm
+ExecStart=/usr/sbin/tcsd
+
+[Install]
+WantedBy=multi-user.target

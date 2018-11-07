@@ -1,3 +1,0 @@
-libalmath filter=lfs diff=lfs merge=lfs -text
-libalmathinternal/ filter=lfs diff=lfs merge=lfs -text
-qi-framework/ filter=lfs diff=lfs merge=lfs -text

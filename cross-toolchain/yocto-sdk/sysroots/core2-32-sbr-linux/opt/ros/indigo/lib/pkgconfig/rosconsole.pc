@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosconsole
+Description: Description of rosconsole
+Version: 1.11.20
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lrosconsole -lrosconsole_log4cxx -lrosconsole_backend_interface -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/liblog4cxx.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_regex-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_system-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_thread-mt.so
+Requires: cpp_common rostime
