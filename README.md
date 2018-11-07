@@ -30,7 +30,11 @@
 
   If qiBuild doesn't launch: 
 
-        -> gedit ~/.bashrc and in the end of the file add: export PATH=${PATH}:${HOME}/.local/bin
+        -> gedit ~/.bashrc 
+  
+  and in the end of the file add: 
+  
+        export PATH=${PATH}:${HOME}/.local/bin
 
  # 4) Install SDK and cross-toolchain
 
@@ -38,17 +42,17 @@
     
 You should create a new branch with your last name:
     
-    -> git checkout -b <last_name>
+    -> git checkout -b your_last_name
     
 Then you should write me your login in GitHub, so that I add you to the list of collaborators (link to my page: vk.com/molvlad)
 
-After that you will be able make changes and save them on your branch:
+After that you will be able make changes and save them on your branch (names_of_modified_files - files you want to save):
 
-    -> git add <names_of_modified_files>
+    -> git add names_of_modified_files
     
-    -> git commit -m "<message for the other people"
+    -> git commit -m "message for the other people"
     
-    -> git push origin <name_of_branch>
+    -> git push origin your_last_name
     
 Note: you should work only in your branch!
 
@@ -81,16 +85,18 @@ Download and unzip to the directory Robocup2019:
 Create a new project (if it's necessary, or move to the directory with example):
 
     -> qisrc create template
+    
+Note: All oexamples on C++ are in Robocup2019/naoqi/workspace
 
 Then init worktree:
 
     -> qibuild init
     
- Below <toolchain> means "toolchain_for_desktop", if you want to build for the desktop, or "toolchain_for_robot" otherwise:
+ Below "toolchain" means "toolchain_for_desktop", if you want to build for the desktop, or "toolchain_for_robot" otherwise:
     
-    -> qibuild configure -c <toolchain>
+    -> qibuild configure -c toolchain
     
-    -> qibuild make -c <toolchain>
+    -> qibuild make -c toolchain
     
  # 7) Start the Project 
  
@@ -98,22 +104,22 @@ Then init worktree:
  
     -> cd build-toolchain_for_the_robot/sdk/bin
     
- Below <example> is the name of your program, <IP_address> - IP address of the robot.
+ Below "example" is the name of your program, "IP_address" - IP address of the robot, "your_directory" - directory with your last name in the robot (read "Note" at the end).
     
-    -> ./<example> <IP_address>
+    -> ./example IP_address
     
  If you build your project for the robot:
  
      -> cd build-toolchain_for_the_robot/sdk/bin
      
-    -> scp <example> nao@<IP_address>:/home/nao/<your_directory>
+    -> scp example nao@IP_address:/home/nao/your_directory
     
     -> ssh nao@<IP_address>
     
-    -> ./<your_directory>/<example> <IP_address>
-    
- To work with the robot you should create on him a new directory with your last name and copy files there. Otherwise everything will be remove.
+    -> ./your_directory/example IP_address
     
 # Note:
+
+To work with the robot you should create on him a new directory with your last name and copy files there. Otherwise everything will be remove.
 
 If you want to create a local module, at the end of building you will get a static library .so, that cannot be run as an ordinary program.
