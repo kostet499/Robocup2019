@@ -35,6 +35,22 @@
  # 4) Install SDK and cross-toolchain
 
     -> git clone https://github.com/MolVlad/Robocup2019
+    
+You should create a new branch with your last name:
+    
+    -> git checkout -b <last_name>
+    
+Then you should write me your login in GitHub, so that I add you to the list of collaborators (link to my page: vk.com/molvlad)
+
+After that you will be able make changes and save them on your branch:
+
+    -> git add <names_of_modified_files>
+    
+    -> git commit -m "<message for the other people"
+    
+    -> git push origin <name_of_branch>
+    
+Note: you should work only in your branch!
 
 Download and unzip to the directory Robocup2019:
     
@@ -80,4 +96,24 @@ Then init worktree:
  
  If you build your project for the desktop:
  
-    -> cd build-toolchain_for_the_
+    -> cd build-toolchain_for_the_robot/sdk/bin
+    
+ Below <example> is the name of your program, <IP_address> - IP address of the robot.
+    
+    -> ./<example> <IP_address>
+    
+ If you build your project for the robot:
+ 
+     -> cd build-toolchain_for_the_robot/sdk/bin
+     
+    -> scp <example> nao@<IP_address>:/home/nao/<your_directory>
+    
+    -> ssh nao@<IP_address>
+    
+    -> ./<your_directory>/<example> <IP_address>
+    
+ To work with the robot you should create on him a new directory with your last name and copy files there. Otherwise everything will be remove.
+    
+# Note:
+
+If you want to create a local module, at the end of building you will get a static library .so, that cannot be run as an ordinary program.
