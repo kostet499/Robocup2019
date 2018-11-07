@@ -1,50 +1,35 @@
-
-#include <signal.h>
-#include <boost/shared_ptr.hpp>
+#include <iostream>
+#include <alerror/alerror.h>
+#include <alcommon/alproxy.h>
 #include <alcommon/albroker.h>
-#include <alcommon/almodule.h>
-#include <alcommon/albrokermanager.h>
-#include <alcommon/altoolsmain.h>
 
-#include "mymodule.h"
-
-
-#ifdef MODULECREATING_IS_REMOTE
-# define ALCALL
-#else
-# ifdef _WIN32
-#  define ALCALL __declspec(dllexport)
-# else
-#  define ALCALL
-# endif
-#endif
-
-extern "C"
-{
-  ALCALL int _createModule(boost::shared_ptr<AL::ALBroker> pBroker)
+int main(int argc, char* argv[]) {
+  if(argc != 2)
   {
-    // init broker with the main broker instance
-    // from the parent executable
-    AL::ALBrokerManager::setInstance(pBroker->fBrokerManager.lock());
-    AL::ALBrokerManager::getInstance()->addBroker(pBroker);
-    AL::ALModule::createModule<MyModule>( pBroker, "MyModule" );
-
-    return 0;
+    std::cerr << "Wrong number of arguments!" << std::endl;
+    std::cerr << "Usage: testhelloworld NAO_IP" << std::endl;
+    exit(2);
   }
 
-  ALCALL int _closeModule()
-  {
-    return 0;
+  const std::string robotIP = argv[1];
+  int port = 9559;
+
+  try {
+    /** Create a generic proxy to "HelloWorld" module.
+    * Arguments for the constructor are
+    * - name of the module
+    * - string containing the IP adress of the robot
+    * - port (default is 9559)
+    */
+    boost::shared_ptr<AL::ALBroker> broker =
+      AL::ALBroker::createBroker("MyBroker", "", 0, robotIP, port);
+
+    boost::shared_ptr<AL::ALProxy> testProxy
+      = boost::shared_ptr<AL::ALProxy>(new AL::ALProxy(broker, "MyModule"));
   }
+  catch (const AL::ALError& e) {
+    std::cerr << e.what() << std::endl;
+  }
+
+  while(1);
 }
-
-#ifdef MODULECREATING_IS_REMOTE
-  int main(int argc, char *argv[])
-  {
-    // pointer to createModule
-    TMainType sig;
-    sig = &_createModule;
-    // call main
-    ALTools::mainFunction("mymodule", argc, argv, sig);
-  }
-#endif

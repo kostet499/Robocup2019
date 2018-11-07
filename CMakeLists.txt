@@ -12,7 +12,7 @@ CMAKE_FORCE_CXX_COMPILER(g++ GNU)
 option(MODULECREATING_IS_REMOTE "module is compiled as a remote module (ON or OFF)" ON)
 
 set(_srcs
-    main.cpp
+    source.cpp
     mymodule.h
     mymodule.cpp
     )
@@ -25,3 +25,7 @@ else()
 endif()
 
 qi_use_lib(modulecreating ALCOMMON ALPROXIES ALTHREAD)
+
+// hmm
+qi_create_bin(testmodule main.cpp)
+qi_use_lib(testmodule ALCOMMON ALPROXIES)

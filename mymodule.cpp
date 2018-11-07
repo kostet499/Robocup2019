@@ -40,10 +40,10 @@ void MyModule::init() {
         qiLogInfo("MyModule") << "Executing the callback" << std::endl;
 
         AL::ALCriticalSection section(fCallbackMutex);
-        
+
         // here the event data we need to get
         fState = fMemoryProxy.getData("RightBumperPressed");
-        
+
         if(fState > 0.5f) {
             return;
         }
