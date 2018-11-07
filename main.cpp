@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
       AL::ALBroker::createBroker("MyBroker", "", 0, robotIP, port);
 
     boost::shared_ptr<AL::ALProxy> testProxy
-      = boost::shared_ptr<AL::ALProxy>(new AL::ALProxy(broker, "MyModule"));
+      = boost::shared_ptr<AL::ALProxy>(new AL::ALProxy(broker, "EventsTest"));
   }
   catch (const AL::ALError& e) {
     std::cerr << e.what() << std::endl;

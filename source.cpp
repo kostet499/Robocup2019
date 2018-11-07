@@ -6,7 +6,7 @@
 #include <alcommon/albrokermanager.h>
 #include <alcommon/altoolsmain.h>
 
-#include "mymodule.h"
+#include "EventsTest.h"
 
 
 #ifdef MODULECREATING_IS_REMOTE
@@ -27,7 +27,7 @@ extern "C"
     // from the parent executable
     AL::ALBrokerManager::setInstance(pBroker->fBrokerManager.lock());
     AL::ALBrokerManager::getInstance()->addBroker(pBroker);
-    AL::ALModule::createModule<MyModule>( pBroker, "MyModule" );
+    AL::ALModule::createModule<EventsTest>( pBroker, "EventsTest" );
 
     return 0;
   }
@@ -45,6 +45,6 @@ extern "C"
     TMainType sig;
     sig = &_createModule;
     // call main
-    ALTools::mainFunction("MyModule", argc, argv, sig);
+    ALTools::mainFunction("EventsTest", argc, argv, sig);
   }
 #endif

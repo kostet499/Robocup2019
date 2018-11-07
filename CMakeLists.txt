@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 2.8)
 project(modulecreating)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -13,8 +13,8 @@ option(MODULECREATING_IS_REMOTE "module is compiled as a remote module (ON or OF
 
 set(_srcs
     source.cpp
-    mymodule.h
-    mymodule.cpp
+    eventstest.h
+    eventstest.cpp
     )
 
 if(MODULECREATING_IS_REMOTE)

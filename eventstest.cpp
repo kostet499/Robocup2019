@@ -1,4 +1,4 @@
-#include "mymodule.h"
+#include "EventsTest.h"
 
 #include <alvalue/alvalue.h>
 #include <alcommon/alproxy.h>
@@ -6,7 +6,7 @@
 #include <qi/log.hpp>
 #include <althread/alcriticalsection.h>
 
-MyModule::MyModule(
+EventsTest::EventsTest(
     boost::shared_ptr<AL::ALBroker> broker,
     const std::string& name): AL::ALModule(broker, name),
     fCallbackMutex(AL::ALMutex::createALMutex())
@@ -15,29 +15,29 @@ MyModule::MyModule(
         // change descriptions maybe
         setModuleDescription("Test of reacting the events");
         functionName("onSomeEventHappened", getName(), "Let me think what to do");
-        BIND_METHOD(MyModule::onSomeEventHappened);
+        BIND_METHOD(EventsTest::onSomeEventHappened);
     }
 
 // seems not to be changed
-MyModule::~MyModule() {
-    fMemoryProxy.unsubscribeToEvent("onSomeEventHappened", "MyModule");
+EventsTest::~EventsTest() {
+    fMemoryProxy.unsubscribeToEvent("onSomeEventHappened", "EventsTest");
 }
 
-void MyModule::init() {
+void EventsTest::init() {
     try {
         fMemoryProxy = AL::ALMemoryProxy(getParentBroker());
         // here choose the Event
         fState = fMemoryProxy.getData("RightBumperPressed");
-        fMemoryProxy.subscribeToEvent("RightBumperPressed", "MyModule", "onSomeEventHappened");
+        fMemoryProxy.subscribeToEvent("RightBumperPressed", "EventsTest", "onSomeEventHappened");
     }
     catch(const AL::ALError& e) {
-        qiLogError("MyModule") << e.what() << std::endl;
+        qiLogError("EventsTest") << e.what() << std::endl;
     }
    }
 
     // here the callback to event we need to write
-    void MyModule::onSomeEventHappened() {
-        qiLogInfo("MyModule") << "Executing the callback" << std::endl;
+    void EventsTest::onSomeEventHappened() {
+        qiLogInfo("EventsTest") << "Executing the callback" << std::endl;
 
         AL::ALCriticalSection section(fCallbackMutex);
 
@@ -52,7 +52,7 @@ void MyModule::init() {
             fTtsProxy.say("Event happened");
         }
         catch (const AL::ALError& e) {
-            qiLogError("MyModule") << e.what() << std::endl;
+            qiLogError("EventsTest") << e.what() << std::endl;
         }
 
     }

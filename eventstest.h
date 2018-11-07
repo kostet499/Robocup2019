@@ -11,11 +11,11 @@
 
 namespace AL { class ALBroker; }
 
-class MyModule : public AL::ALModule {
+class EventsTest : public AL::ALModule {
     public:
-        MyModule(boost::shared_ptr<AL::ALBroker> broker, const std::string& name);
+        EventsTest(boost::shared_ptr<AL::ALBroker> broker, const std::string& name);
 
-        virtual ~MyModule();
+        virtual ~EventsTest();
 
         virtual void init();
 
