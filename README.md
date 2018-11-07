@@ -114,7 +114,7 @@ Then init worktree:
      
     -> scp example nao@IP_address:/home/nao/your_directory
     
-    -> ssh nao@<IP_address>
+    -> ssh nao@IP_address
     
     -> ./your_directory/example IP_address
     
