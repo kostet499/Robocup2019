@@ -44,7 +44,7 @@ You should create a new branch with your last name:
     
     -> git checkout -b your_last_name
     
-Then you should write me your login in GitHub, so that I add you to the list of collaborators (link to my page: vk.com/molvlad)
+Then you should write me your login in GitHub, so that I will add you to the list of collaborators (link to my page: vk.com/molvlad)
 
 After that you will be able make changes and save them on your branch (names_of_modified_files - files you want to save):
 
@@ -86,13 +86,13 @@ Create a new project (if it's necessary, or move to the directory with example):
 
     -> qisrc create template
     
-Note: All oexamples on C++ are in Robocup2019/naoqi/workspace
+Note: All examples on C++ are in Robocup2019/naoqi/workspace
 
 Then init worktree:
 
     -> qibuild init
     
- Below "toolchain" means "toolchain_for_desktop", if you want to build for the desktop, or "toolchain_for_robot" otherwise:
+Below "toolchain" means "toolchain_for_desktop", if you want to build for the desktop, or "toolchain_for_robot" otherwise:
     
     -> qibuild configure -c toolchain
     
