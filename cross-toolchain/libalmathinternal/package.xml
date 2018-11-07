@@ -1,0 +1,7 @@
+<package name="libalmathinternal" version="0.1">
+  <depends buildtime="true" names="libalmath bfl opencv3 gtest eigen3 libqi boost" />
+  <depends names="libalmath boost eigen3 opencv3 bfl" runtime="true" />
+  <scm>
+    <git revision="2feaaca7231a0506f68c71dbac7570f8e7305ddf" />
+    </scm>
+  </package>

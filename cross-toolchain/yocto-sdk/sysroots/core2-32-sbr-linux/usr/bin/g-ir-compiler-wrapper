@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/bin/g-ir-scanner-qemuwrapper /home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/bin/g-ir-compiler "$@"

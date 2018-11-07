@@ -1,0 +1,11 @@
+set(RT_LIBRARIES
+  ${YOCTO_SDK_TARGET_SYSROOT}/usr/lib/librt.so
+  CACHE INTERNAL "" FORCE
+)
+
+set(RT_INCLUDE_DIRS
+  ${YOCTO_SDK_TARGET_SYSROOT}/usr/include
+  CACHE INTERNAL "" FORCE
+)
+
+export_lib(RT)

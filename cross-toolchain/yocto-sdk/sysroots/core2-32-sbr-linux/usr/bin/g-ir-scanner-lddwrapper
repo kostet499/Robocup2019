@@ -1,0 +1,2 @@
+#!/bin/sh
+prelink-rtld --root=/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom "$@"

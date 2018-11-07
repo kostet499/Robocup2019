@@ -1,0 +1,8 @@
+<package name="qi-framework" target="atom" version="1.0.1-r6">
+    <license>BSD</license>
+<depends buildtime="true" names="dl boost pthread systemd openssl" runtime="true" />
+    <depends buildtime="true" names="gtest" testtime="true" />
+  <depends buildtime="true" names="libqi" runtime="true" />
+    <depends names="gtest" testtime="true" />
+  <depends buildtime="true" names="qt dl boost pthread libqi breakpad libqicore" runtime="true" />
+  </package>

@@ -1,0 +1,11 @@
+set(DL_LIBRARIES
+  ${YOCTO_SDK_TARGET_SYSROOT}/usr/lib/libdl.so
+  CACHE INTERNAL "" FORCE
+)
+
+set(DL_INCLUDE_DIRS
+  ${YOCTO_SDK_TARGET_SYSROOT}/usr/include
+  CACHE INTERNAL "" FORCE
+)
+
+export_lib(DL)

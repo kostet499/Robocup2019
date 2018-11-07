@@ -1,0 +1,16 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/rasqal
+
+have_raptor2_api=1
+
+Name: Rasqal RDF Query Library
+Description: Rasqal RDF Query parsing and execution library
+Requires: raptor2 >= 2.0.7
+Requires.private: 
+Version: 0.9.33
+Libs: -L${libdir} -lrasqal
+Libs.private:   -luuid  -lraptor2 -luuid  -lmpfr
+Cflags: -I${includedir}
+

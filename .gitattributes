@@ -1,0 +1,2 @@
+*.pkg filter=lfs diff=lfs merge=lfs -text
+naoqi/lib/libQt5WebEngineCore.so.5.9.2 filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,46 @@
+export SDKTARGETSYSROOT=/opt/naoqi-os/sysroots/core2-32-sbr-linux
+export PATH=/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/sbin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/sbin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/../x86_64-naoqisdk-linux/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-uclibc:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-musl:$PATH
+export CCACHE_PATH=/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/../x86_64-naoqisdk-linux/bin:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-uclibc:/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/bin/i686-sbr-linux-musl:$CCACHE_PATH
+export PKG_CONFIG_SYSROOT_DIR=$SDKTARGETSYSROOT
+export PKG_CONFIG_PATH=$SDKTARGETSYSROOT/usr/lib/pkgconfig
+export CONFIG_SITE=/opt/naoqi-os/site-config-core2-32-sbr-linux
+export OECORE_NATIVE_SYSROOT="/opt/naoqi-os/sysroots/x86_64-naoqisdk-linux"
+export OECORE_TARGET_SYSROOT="$SDKTARGETSYSROOT"
+export OECORE_ACLOCAL_OPTS="-I /opt/naoqi-os/sysroots/x86_64-naoqisdk-linux/usr/share/aclocal"
+unset command_not_found_handle
+export CC="i686-sbr-linux-gcc  -m32 -march=core2 -mtune=core2 -msse3 -mfpmath=sse --sysroot=$SDKTARGETSYSROOT"
+export CXX="i686-sbr-linux-g++  -m32 -march=core2 -mtune=core2 -msse3 -mfpmath=sse --sysroot=$SDKTARGETSYSROOT"
+export CPP="i686-sbr-linux-gcc -E  -m32 -march=core2 -mtune=core2 -msse3 -mfpmath=sse --sysroot=$SDKTARGETSYSROOT"
+export AS="i686-sbr-linux-as  "
+export LD="i686-sbr-linux-ld   --sysroot=$SDKTARGETSYSROOT"
+export GDB=i686-sbr-linux-gdb
+export STRIP=i686-sbr-linux-strip
+export RANLIB=i686-sbr-linux-ranlib
+export OBJCOPY=i686-sbr-linux-objcopy
+export OBJDUMP=i686-sbr-linux-objdump
+export AR=i686-sbr-linux-ar
+export NM=i686-sbr-linux-nm
+export M4=m4
+export TARGET_PREFIX=i686-sbr-linux-
+export CONFIGURE_FLAGS="--target=i686-sbr-linux --host=i686-sbr-linux --build=x86_64-linux --with-libtool-sysroot=$SDKTARGETSYSROOT"
+export CFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types "
+export CXXFLAGS=" -O2 -pipe -g -feliminate-unused-debug-types "
+export LDFLAGS="-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed"
+export CPPFLAGS=""
+export KCFLAGS="--sysroot=$SDKTARGETSYSROOT"
+export OECORE_DISTRO_VERSION="3.3.7"
+export OECORE_SDK_VERSION="3.3.7"
+export ARCH=x86
+export CROSS_COMPILE=i686-sbr-linux-
+
+# Append environment subscripts
+if [ -d "$OECORE_TARGET_SYSROOT/environment-setup.d" ]; then
+    for envfile in $OECORE_TARGET_SYSROOT/environment-setup.d/*.sh; do
+	    . $envfile
+    done
+fi
+if [ -d "$OECORE_NATIVE_SYSROOT/environment-setup.d" ]; then
+    for envfile in $OECORE_NATIVE_SYSROOT/environment-setup.d/*.sh; do
+	    . $envfile
+    done
+fi

@@ -1,0 +1,17 @@
+get_filename_component(_opencv3_contrib_root "${YOCTO_SDK_TARGET_SYSROOT}" ABSOLUTE)
+
+set(
+  OPENCV3_CONTRIB_LIBRARIES
+  ${_opencv3_contrib_root}/usr/lib/libopencv_contrib.so
+  CACHE INTERNAL "" FORCE
+)
+
+set(
+  OPENCV3_CONTRIB_INCLUDE_DIRS
+  ${_opencv3_contrib_root}/usr/include
+  CACHE INTERNAL "" FORCE
+)
+
+qi_persistent_set(OPENCV3_CONTRIB_DEPENDS OPENCV3_CORE OPENCV3_IMGPROC OPENCV3_HIGHGUI OPENCV3_FEATURES2D OPENCV3_CALIB3D OPENCV3_ML OPENCV3_VIDEO OPENCV3_OBJDETECT PTHREAD)
+
+export_lib(OPENCV3_CONTRIB)

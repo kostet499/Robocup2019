@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.aldebaran.system
+Exec=/opt/aldebaran/bin/system-daemon
+User=root

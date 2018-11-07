@@ -1,0 +1,8 @@
+<package name="gtest" version="0.1">
+  <license>BSD</license>
+  <depends buildtime="true" names="pthread" />
+  <depends names="pthread" runtime="true" />
+  <scm>
+    <git revision="a2f4b15872aced41a6c56f40ac432ec16ee4094c" />
+    </scm>
+  </package>

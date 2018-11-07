@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.aldebaran.navigation.wifilistener
+Exec=/opt/aldebaran/bin/navigation-wifi-listener
+User=root
