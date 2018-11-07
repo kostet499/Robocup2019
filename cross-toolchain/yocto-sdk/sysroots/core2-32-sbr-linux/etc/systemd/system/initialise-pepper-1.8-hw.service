@@ -1,8 +1,0 @@
-[Unit]
-Description=cgos-i2c kernel module (loaded only in the absence of Unicorn)
-After=systemd-udevd.service
-
-[Service]
-Type=oneshot
-ExecStartPre=/bin/sh -c '/usr/sbin/lspci -n | /bin/grep -q 10ee:0007 || /sbin/modprobe cgos-i2c'
-ExecStart=/usr/libexec/reset-cameras.sh toggle

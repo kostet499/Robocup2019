@@ -1,7 +1,0 @@
-<package name="qiprobes" version="0.1">
-  <depends buildtime="true" names="rt dl liblttng_ust pthread liburcu" />
-  <depends names="rt dl liblttng_ust pthread liburcu" runtime="true" />
-  <scm>
-    <git revision="8ecc47f0340241e9c2f7832c05d4534febe5f073" />
-    </scm>
-  </package>

@@ -1,5 +1,0 @@
-#!/bin/sh
-# This prevents g-ir-scanner from writing cache data to /home/opennao
-export GI_SCANNER_DISABLE_CACHE=1
-
-g-ir-scanner --use-binary-wrapper=/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/bin/g-ir-scanner-qemuwrapper --use-ldd-wrapper=/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/bin/g-ir-scanner-lddwrapper --add-include-path=/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/share/gir-1.0 "$@"

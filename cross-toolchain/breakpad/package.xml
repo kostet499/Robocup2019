@@ -1,5 +1,0 @@
-<package name="breakpad" version="0.1">
-  <scm>
-    <git revision="ca46394c444e5c1a5e496295d7d2eefa7be06f13" />
-    </scm>
-  </package>

@@ -1,7 +1,0 @@
-<package name="libalmath" version="0.1">
-  <depends buildtime="true" names="python boost gtest eigen3 libqi rosbag" />
-  <depends names="python rosbag boost eigen3 libqi" runtime="true" />
-  <scm>
-    <git revision="334f0d85f319b2251ba5ce8adb63b91aaa013e1b" />
-    </scm>
-  </package>

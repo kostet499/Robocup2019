@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: rospack
-Description: Description of rospack
-Version: 2.2.7
-Cflags: -I/opt/ros/indigo/include -I/usr/include
-Libs: -L/opt/ros/indigo/lib -lrospack -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libpython2.7.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_filesystem-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_program_options-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_system-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libtinyxml.so
-Requires: 

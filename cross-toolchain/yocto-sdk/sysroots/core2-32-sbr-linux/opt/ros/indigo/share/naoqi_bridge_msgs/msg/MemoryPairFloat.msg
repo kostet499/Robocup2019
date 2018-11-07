@@ -1,2 +1,0 @@
-string memoryKey
-float32 data

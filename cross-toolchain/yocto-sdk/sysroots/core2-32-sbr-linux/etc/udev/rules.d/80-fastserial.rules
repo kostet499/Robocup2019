@@ -1,5 +1,0 @@
-ACTION=="add", SUBSYSTEM=="module", DEVPATH=="/module/fastserial", \
-	RUN="/lib/udev/fastserial_add"
-
-ACTION=="remove", SUBSYSTEM=="module", DEVPATH=="/module/fastserial", \
-	RUN="/lib/udev/fastserial_remove"

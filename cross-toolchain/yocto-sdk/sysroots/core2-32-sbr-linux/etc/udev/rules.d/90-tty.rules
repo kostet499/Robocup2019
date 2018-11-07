@@ -1,2 +1,0 @@
-KERNEL=="ttyS0", PROGRAM=="/bin/grep -qF 'Intel(R) Atom(TM) CPU  E3845' /proc/cpuinfo", SYMLINK+="ttySA"
-KERNEL=="ttyS2", PROGRAM=="/bin/grep -qF 'Intel(R) Atom(TM) CPU Z530' /proc/cpuinfo", SYMLINK+="ttySA"

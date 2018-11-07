@@ -1,4 +1,0 @@
-SUBSYSTEM=="video4linux", KERNEL=="video*", TAG+="systemd"
-
-# force unicorn driver to allocate video memory as early as possible
-KERNEL=="video[0-9]*", SUBSYSTEM=="video4linux", ENV{ID_V4L_PRODUCT}=="unicorn", RUN+="/usr/bin/v4l2-ctl --stream-mmap --stream-count=1 --device=%N"

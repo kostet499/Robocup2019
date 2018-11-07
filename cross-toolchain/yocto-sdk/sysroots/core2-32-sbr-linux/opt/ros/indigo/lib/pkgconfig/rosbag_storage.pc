@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: rosbag_storage
-Description: Description of rosbag_storage
-Version: 1.11.20
-Cflags: -I/opt/ros/indigo/include -I/usr/include
-Libs: -L/opt/ros/indigo/lib -lrosbag_storage -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libconsole_bridge.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_date_time-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_filesystem-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_program_options-mt.so -l:/home/opennao/jenkins/workspace/yocto-rootfs/build/tmp/sysroots/ald-atom/usr/lib/libboost_regex-mt.so
-Requires: roslz4

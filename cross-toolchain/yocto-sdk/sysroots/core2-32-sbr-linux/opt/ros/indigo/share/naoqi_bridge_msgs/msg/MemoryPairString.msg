@@ -1,2 +1,0 @@
-string memoryKey
-string data

@@ -1,8 +1,0 @@
-prefix=/opt/ros/indigo
-
-Name: std_msgs
-Description: Description of std_msgs
-Version: 0.5.10
-Cflags: -I/opt/ros/indigo/include
-Libs: -L/opt/ros/indigo/lib 
-Requires: message_runtime
