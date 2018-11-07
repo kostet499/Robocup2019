@@ -32,33 +32,52 @@
 
         -> gedit ~/.bashrc and in the end of the file add: export PATH=${PATH}:${HOME}/.local/bin
 
- # 4) Install SDK
+ # 4) Install SDK and cross-toolchain
 
     -> git clone https://github.com/MolVlad/Robocup2019
 
-    -> cd Robocup2019
+Download and unzip to the directory Robocup2019:
+    
+    https://drive.google.com/open?id=162PeZSlJ2_Skj8nzoH5qBYcyolB-7E3t
 
 # 5) Configuration: qiBuild Toolchains
 
+ You can just execute my script:
+ 
     -> ./config_toolchain
+    
+ or configure manually:
 
-  If an error occure: "access denied"
+ Configure toolchain for the desktop:
+ 
+    -> qitoolchain create desktop Robocup2019/naoqi/toolchain.xml
+  
+    -> qibuild add-config desktop -t desktop
+  
+  Configure toolchain for the robot:
+  
+    -> qitoolchain create robot /toolchain.xml
+  
+    -> qibuild add-config robot -t robot                                       
 
-        -> chmod u+x config_toolchain
-        
-        and try again
-        
-        https://community.ald.softbankrobotics.com/en/resources/software/nao-v6-only-sdks-and-documentation-283
-        
-        7684067@mail.ru
-       
-        MIPT2018
-        
- # To Compile the Program C++ with the SDK - ALDEBARAN
+ # 6) Compile the Program C++ with the SDK - ALDEBARAN
 
-    -> cd 
+Create a new project (if it's necessary, or move to the directory with example):
 
-Create a new project
+    -> qisrc create template
 
-    ->qisrc create template
+Then init worktree:
 
+    -> qibuild init
+    
+ Below <toolchain> means "toolchain_for_desktop", if you want to build for the desktop, or "toolchain_for_robot" otherwise:
+    
+    -> qibuild configure -c <toolchain>
+    
+    -> qibuild make -c <toolchain>
+    
+ # 7) Start the Project 
+ 
+ If you build your project for the desktop:
+ 
+    -> cd build-toolchain_for_the_
